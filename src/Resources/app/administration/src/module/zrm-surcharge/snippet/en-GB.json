@@ -1,0 +1,8 @@
+{
+    "zrm-surcharge": {
+        "general": {
+            "mainMenuItemGeneral": "Surcharge-GB",
+            "descriptionTextModule": "Manage this custom module here"
+        }
+    }
+}

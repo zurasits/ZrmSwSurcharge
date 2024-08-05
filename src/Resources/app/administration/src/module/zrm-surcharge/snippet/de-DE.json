@@ -1,0 +1,8 @@
+{
+    "zrm-surcharge": {
+        "general": {
+            "mainMenuItemGeneral": "Aufpreis-DE",
+            "descriptionTextModule": "Manage this custom module here"
+        }
+    }
+}
