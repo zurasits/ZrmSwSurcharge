@@ -1,0 +1,33 @@
+{
+    "name": "zrm/zrm-sw-surcharge",
+    "description": "zrm-sw-surcharge/zrm-sw-surcharge",
+    "type": "shopware-platform-plugin",
+    "version": "1.0.0",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Zrm",
+            "email": "zurasits@gmail.com"
+        }
+    ],
+    "require": {
+        "shopware/core": "~6.6.0"
+    },
+    "extra": {
+        "shopware-plugin-class": "ZrmSwSurcharge\\ZrmSwSurcharge",
+        "label": {
+            "de-DE": "Aufpreis ",
+            "en-GB": "Surcharge plugin"
+        }
+    },
+    "autoload": {
+        "psr-4": {
+            "ZrmSwSurcharge\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "ZrmSwSurcharge\\Tests\\": "tests/"
+        }
+    }
+}
