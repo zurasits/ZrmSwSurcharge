@@ -1,14 +1,19 @@
-// <plugin root>/src/Resources/app/administration/src/module/swag-example/index.js
 import deDE from './snippet/de-DE';
 import enGB from './snippet/en-GB';
 
+/* register needed components */
+Shopware.Component.register('zrm-surcharge-index', () => import('./page/zrm-surcharge-index'));
+
+/**
+ *
+ */
 Shopware.Module.register('zrm-surcharge', {
     type: 'plugin',
-    name: 'Example',
+    name: 'ZrmSurcharge',
     title: 'zrm-surcharge.general.mainMenuItemGeneral',
     description: 'zrm-surcharge.general.descriptionTextModule',
     color: '#ff3d58',
-    icon: 'default-shopping-paper-bag-product',
+    icon: 'regular-plug',
 
     snippets: {
         'de-DE': deDE,
@@ -16,15 +21,18 @@ Shopware.Module.register('zrm-surcharge', {
     },
 
     routes: {
-        a: {component: 'b'}
+        'index': {
+            path: 'index',
+            component: 'zrm-surcharge-index'
+        }
     },
 
     navigation: [{
-        id: 'zrm-extension-surcharge',
+        id: 'zrm-surcharge',
         parent: 'sw-extension',
         label: 'zrm-surcharge.general.mainMenuItemGeneral',
         color: '#ff3d58',
-        path: 'sw.extension.store',
+        path: 'zrm.surcharge.index',
         icon: 'default-shopping-paper-bag-product',
         position: 100
     }]
