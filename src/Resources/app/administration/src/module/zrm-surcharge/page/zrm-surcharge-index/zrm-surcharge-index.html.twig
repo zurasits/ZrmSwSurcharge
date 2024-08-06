@@ -1,7 +1,21 @@
 {% block zrm_surcharge_list %}
     <sw-page class="zrm-surcharge-list">
+        <template #smart-bar-actions>
+            <sw-button variant="primary" :routerLink="{ name: 'zrm.surcharge.create' }">
+                {{ $tc('zrm-surcharge.list.surchargeCreate') }}
+            </sw-button>
+        </template>
+
         <template #content>
-            <h2>Hello world!</h2>
+            <sw-entity-listing
+                    v-if="surchargeList"
+                    :items="surchargeList"
+                    :repository="repository"
+                    :showSelection="false"
+                    :columns="columns"
+                    detailRoute="zrm.surcharge.detail"
+            >
+            </sw-entity-listing>
         </template>
     </sw-page>
 {% endblock %}

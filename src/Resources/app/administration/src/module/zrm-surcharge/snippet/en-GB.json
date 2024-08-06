@@ -2,11 +2,17 @@
     "zrm-surcharge": {
         "general": {
             "mainMenuItemGeneral": "Surcharge",
-            "descriptionTextModule": "Manage this custom module here"
+            "descriptionTextModule": "Add surcharge values to the product"
         },
         "list": {
-            "columnName": "name",
-            "columnSurcharge": "Surcharge-art"
+            "productType": "Product type",
+            "surchargeType": "Surcharge type",
+            "surchargeValue": "Value",
+            "surchargeCreate": "Create Surcharge"
+        },
+        "detail": {
+            "buttonCancel": "Cancel",
+            "buttonSave": "Save"
         }
     }
 }

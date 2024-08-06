@@ -3,6 +3,8 @@ import enGB from './snippet/en-GB';
 
 /* register needed components */
 Shopware.Component.register('zrm-surcharge-index', () => import('./page/zrm-surcharge-index'));
+Shopware.Component.register('zrm-surcharge-create', () => import('./page/zrm-surcharge-create'));
+Shopware.Component.register('zrm-surcharge-detail', () => import('./page/zrm-surcharge-detail'));
 
 /**
  *
@@ -21,10 +23,24 @@ Shopware.Module.register('zrm-surcharge', {
     },
 
     routes: {
-        'index': {
+        index: {
             path: 'index',
             component: 'zrm-surcharge-index'
-        }
+        },
+        create: {
+            path: 'create',
+            component: 'zrm-surcharge-create',
+            meta: {
+                parentPath: 'zrm.surcharge.index'
+            },
+        },
+        'detail': {
+            path: 'detail/:id',
+            component: 'zrm-surcharge-detail',
+            meta: {
+                parentPath: 'zrm.surcharge.index'
+            },
+        },
     },
 
     navigation: [{
