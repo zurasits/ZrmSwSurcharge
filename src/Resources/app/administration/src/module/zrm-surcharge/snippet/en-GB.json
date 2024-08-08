@@ -1,0 +1,22 @@
+{
+    "zrm-surcharge": {
+        "general": {
+            "mainMenuItemGeneral": "Surcharge",
+            "descriptionTextModule": "Add surcharge values to the product"
+        },
+        "list": {
+            "productType": "Product type",
+            "surchargeType": "Surcharge type",
+            "surchargeValue": "Value",
+            "surchargeCreate": "Create Surcharge"
+        },
+        "detail": {
+            "buttonCancel": "Cancel",
+            "buttonSave": "Save",
+            "surchargeAbsolute": "absolute",
+            "surchargePercentage": "percentage",
+            "errorTitle":   "Surcharge detail save error",
+            "assignLabel": "Category"
+        }
+    }
+}

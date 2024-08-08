@@ -1,0 +1,12 @@
+{
+    "zrm-surcharge": {
+        "general": {
+            "mainMenuItemGeneral": "Aufpreis",
+            "descriptionTextModule": "Manage this custom module here"
+        },
+        "list": {
+            "columnName": "name",
+            "columnSurcharge": "Aufpreis"
+        }
+    }
+}
