@@ -1,9 +1,6 @@
-// import template from './zrm-surcharge-create.html.twig';
 const { Component } = Shopware;
 
 export default {
-    // template,
-
     metaInfo() {
         return {
             title: this.$createTitle(),
@@ -36,4 +33,5 @@ export default {
             })
         }
     }
+
 }

@@ -16,7 +16,7 @@
             "surchargeAbsolute": "absolute",
             "surchargePercentage": "percentage",
             "errorTitle":   "Surcharge detail save error",
-            "assignLabel": "Category"
+            "assignLabel": "Product"
         }
     }
 }

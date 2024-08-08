@@ -39,62 +39,29 @@ export default {
 
     methods: {
         createdComponent() {
-            this.repository = this.repositoryFactory.create('category');
+            this.repository = this.repositoryFactory.create('product');
             this.getProducts();
         },
 
         getProducts() {
             const criteria = new Criteria();
             this.repository.search(criteria, Shopware.Context.api).then((result) => {
-                // this.products = result;
-                this.products = this.transformProducts(this.removeDuplicates(result));
-                this.products = [ {label: "productname1", value: 1}, {label: "productname2", value: 2} ];
+                this.products = result;
                 console.log(result);
 
             }).catch((exception) => {
                 this.createNotificationError({
                     title: this.$tc('zrm-surcharge.detail.errorTitle'),
-                    message: "-------- esaa ----------" + exception
+                    message: exception
                 });
             });
-        },
-
-        transformProducts(products) {
-            return products.map(product => ({
-                label: product.name,
-                value: product.id
-            }));
-        },
-
-        removeDuplicates(products) {
-            const uniqueProducts = [];
-            const productIds = new Set();
-
-            products.forEach(product => {
-                if (!productIds.has(product.id)) {
-                    productIds.add(product.id);
-                    uniqueProducts.push(product);
-                }
-            });
-
-            return uniqueProducts;
         },
 
         onClickSave() {
             this.isLoading = true;
             console.log(this.selectedProduct);
-            // this.repository.save(this.selectedProduct, Shopware.Context.api).then(() => {
-            //     this.getProducts();
-            //     this.isLoading = false;
-            //     this.processSuccess = true;
-            //     console.log(this.selectedProduct);
-            // }).catch((exception) => {
-            //     this.isLoading = false;
-            //     this.createNotificationError({
-            //         title: this.$tc('zrm-surcharge.detail.errorTitle'),
-            //         message: " ++++++++++ " + exception
-            //     });
-            // });
+            //todo surcharge save logit here
+
         },
 
         saveFinish() {
