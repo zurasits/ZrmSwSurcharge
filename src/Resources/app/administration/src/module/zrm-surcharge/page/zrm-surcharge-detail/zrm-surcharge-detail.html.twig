@@ -6,7 +6,6 @@
                 {{ $tc('zrm-surcharge.detail.buttonCancel') }}
             </sw-button>
 
-
             <sw-button-process
                     :isLoading="isLoading"
                     :processSuccess="processSuccess"
@@ -29,35 +28,6 @@
                             show-clearable-button
                     >
                     </sw-entity-single-select>
-
-                    <sw-single-select
-                            :label="$tc('zrm-surcharge.detail.assignLabel')"
-                            v-model="selectedProduct"
-                            :options="products"
-                            placeholder="Please select"
-                            show-clearable-button
-                    >
-                    </sw-single-select>
-
-                    <sw-select-field
-                            name="sortType"
-                            :label="$tc('zrm-surcharge.detail.assignLabel')"
-                            :value="123"
-                            class="sw-entity-single-select__selection-input"
-                    >
-
-                        <!-- eslint-disable-next-line sw-deprecation-rules/no-twigjs-blocks -->
-                        {% block sw_sorting_select_options %}
-                            <option
-                                    v-for="product in products"
-                                    :key="product.value"
-                                    :value="product.value"
-                            >
-                                {{ product.label }}
-                            </option>
-                        {% endblock %}
-                    </sw-select-field>
-
 
                     <sw-radio-field
                             v-model="selectedProduct"
