@@ -3,13 +3,13 @@ import template from './zrm-surcharge-index.html.twig';
 export default {
     template,
 
+    inject: ['repositoryFactory'],
+
     metaInfo() {
         return {
             title: this.$createTitle(),
         };
     },
-
-    inject: ['repositoryFactory'],
 
     data() {
         return {

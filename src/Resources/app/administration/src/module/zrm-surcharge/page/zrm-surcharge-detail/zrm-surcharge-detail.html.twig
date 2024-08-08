@@ -1,0 +1,74 @@
+{% block zrm_surcharge_detail %}
+    <sw-page class="zrm-surcharge-detail">
+
+        <template #smart-bar-actions>
+            <sw-button variant="primary" :routerLink="{ name: 'zrm.surcharge.index' }">
+                {{ $tc('zrm-surcharge.detail.buttonCancel') }}
+            </sw-button>
+
+
+            <sw-button-process
+                    :isLoading="isLoading"
+                    :processSuccess="processSuccess"
+                    variant="primary"
+                    @process-finish="saveFinish"
+                    @click="onClickSave">
+                {{ $tc('zrm-surcharge.detail.buttonSave') }}
+            </sw-button-process>
+        </template>
+
+        <template #content>
+            <sw-card-view>
+                <sw-card :isLoading="isLoading">
+
+                    <sw-entity-single-select
+                            :label="$tc('zrm-surcharge.detail.assignLabel')"
+                            v-model="selectedProduct"
+                            entity="product"
+                            placeholder="Please select"
+                            show-clearable-button
+                    >
+                    </sw-entity-single-select>
+
+                    <sw-single-select
+                            :label="$tc('zrm-surcharge.detail.assignLabel')"
+                            v-model="selectedProduct"
+                            :options="products"
+                            placeholder="Please select"
+                            show-clearable-button
+                    >
+                    </sw-single-select>
+
+                    <sw-select-field
+                            name="sortType"
+                            :label="$tc('zrm-surcharge.detail.assignLabel')"
+                            :value="123"
+                            class="sw-entity-single-select__selection-input"
+                    >
+
+                        <!-- eslint-disable-next-line sw-deprecation-rules/no-twigjs-blocks -->
+                        {% block sw_sorting_select_options %}
+                            <option
+                                    v-for="product in products"
+                                    :key="product.value"
+                                    :value="product.value"
+                            >
+                                {{ product.label }}
+                            </option>
+                        {% endblock %}
+                    </sw-select-field>
+
+
+                    <sw-radio-field
+                            v-model="selectedProduct"
+                            :options="options"
+                            :label="$tc('zrm-surcharge.list.surchargeType')">
+                    </sw-radio-field>
+
+                    <sw-number-field v-model="selectedProduct" :label="$tc('zrm-surcharge.list.surchargeValue')"></sw-number-field>
+
+                </sw-card>
+            </sw-card-view>
+        </template>
+    </sw-page>
+{% endblock %}

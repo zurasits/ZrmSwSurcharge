@@ -12,7 +12,11 @@
         },
         "detail": {
             "buttonCancel": "Cancel",
-            "buttonSave": "Save"
+            "buttonSave": "Save",
+            "surchargeAbsolute": "absolute",
+            "surchargePercentage": "percentage",
+            "errorTitle":   "Surcharge detail save error",
+            "assignLabel": "Category"
         }
     }
 }
