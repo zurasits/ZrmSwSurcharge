@@ -1,1 +1,1 @@
-a Shopware 6 plugin to manage surcharges.
+# a Shopware 6 plugin to manage surcharges.
